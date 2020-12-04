@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "Dense"
+#include "D:\Documents\Personals\Projects\GNB\eigen-3.3.8\Eigen\Dense"
 
 using Eigen::ArrayXd;
 using std::string;
@@ -19,7 +19,7 @@ class GNB {
   /**
    * Destructor
    */
-  virtual ~GNB();
+  // virtual ~GNB();
 
   /**
    * Train classifier
@@ -33,6 +33,19 @@ class GNB {
   string predict(const vector<double> &sample);
 
   vector<string> possible_labels = {"left","keep","right"};
+
+  ArrayXd left_means;
+  ArrayXd left_sds;
+  double left_prior;
+  
+  ArrayXd keep_means;
+  ArrayXd keep_sds;
+  double keep_prior;
+  
+  ArrayXd right_means;
+  ArrayXd right_sds;
+  double right_prior;
+
 };
 
 #endif  // CLASSIFIER_H
